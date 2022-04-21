@@ -20,13 +20,32 @@ const endpointEmitter = async (request, callback) => {
   callback(data);
 };
 
-const sendEmail = (subject, text) => {
+const sendEmail = (fullName, email, phone, projectDetails) => {
+  const subject = `📧  You have revieved a new email lead from ${fullName}!`;
+  const text = `
+    📧 You have revieved a new email lead!
+
+    Full Name: ${fullName}
+    Email: ${email}
+    Phone: ${phone}
+    Project Details: ${projectDetails}
+  `;
+  const html = `
+    📧 You have revieved a new email lead!
+    <br />
+    <br />
+    Full Name: ${fullName} <br />
+    Email: ${email} <br />
+    Phone: ${phone} <br />
+    Project Details: ${projectDetails}
+  `;
+
   const msg = {
     to: 'mikedev0431@gmail.com', // Andrew make sure to change this to YOUR personal email.
     from: 'michael@orijinator.com', // Change to your verified sender
     subject: subject,
     text: text,
-    // html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+    html: html,
   };
 
   sgMail
