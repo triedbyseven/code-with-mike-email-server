@@ -4,8 +4,9 @@ const { endpointEmitter, sendEmail } = require('./utils');
 const serverListener = async (request, response) => {
   endpointEmitter(request, async (data) => {
     if ( data ) {
-      console.log('running with data');
       const dataToJson = JSON.parse(data);
+
+      //Email request goes here.
       console.log(dataToJson, dataToJson.subject, dataToJson.text);
 
       response.writeHead(200, { "Content-Type": "application/json" });
