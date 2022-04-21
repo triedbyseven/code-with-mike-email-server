@@ -22,7 +22,7 @@ const endpointEmitter = async (request, callback) => {
 
 const sendEmail = (subject, text) => {
   const msg = {
-    to: 'mikedev0431@gmail.com', // Change to your recipient
+    to: 'mikedev0431@gmail.com', // Andrew make sure to change this to YOUR personal email.
     from: 'michael@orijinator.com', // Change to your verified sender
     subject: subject,
     text: text,

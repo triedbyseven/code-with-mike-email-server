@@ -8,6 +8,7 @@ const serverListener = async (request, response) => {
 
       //Email request goes here.
       console.log(dataToJson, dataToJson.subject, dataToJson.text);
+      sendEmail(dataToJson.subject, dataToJson.text);
 
       response.writeHead(200, { "Content-Type": "application/json" });
       response.end(data);
